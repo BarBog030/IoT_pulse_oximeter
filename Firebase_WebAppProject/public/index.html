@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ESP IoT Firebase App</title>
+
+    <!-- update the version number as needed -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+
+    <!-- include only the Firebase features as you need -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+
+    <script>
+     // web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCWZ-rPMcLbYvjAvQyEssgsNEWdQhEEwsA",
+        authDomain: "esp32-firebase-b114a.firebaseapp.com",
+        databaseURL: "https://esp32-firebase-b114a-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "esp32-firebase-b114a",
+        storageBucket: "esp32-firebase-b114a.appspot.com",
+        messagingSenderId: "1014958061366",
+        appId: "1:1014958061366:web:8216c7d7a133ec571ba597"
+      };
+
+      // Initialize firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Make auth and database references
+      const auth = firebase.auth();
+      const db = firebase.database();
+
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="faviconHeart.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <!--TOP BAR-->
+  <div class="topnav">
+    <h1>Sensor Readings <br/> <i class="fa fa-list-ul"></i></h1>
+  </div>
+
+  <!--AUTHENTICATION BAR (USER DETAILS/LOGOUT BUTTON)-->
+  <div id="authentication-bar" style="display: none;">
+    <p><span id="authentication-status">User logged in</span>
+       <span id="user-details">USEREMAIL</span>
+       <a href="/" id="logout-link">(logout)</a>
+    </p>
+  </div>
+
+  <!--LOGIN FORM-->
+  <form id="login-form" style="display: none;">
+    <div class="form-elements-container">
+      <label for="input-email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Username" id="input-email" required>
+
+      <label for="input-password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" id="input-password" required>
+
+      <button type="submit" id="login-button">Login</button>
+      <p id="error-message" style="color:red;"></p>
+    </div>
+  </form>
+
+  <!--CONTENT (SENSOR READINGS)-->
+  <div class="content-sign-in" id="content-sign-in" style="display: none;">
+    <div class="cards">
+      <!--HEART RATE-->
+      <div class="card">
+        <p><i class="fas fa-heartbeat" style="color:#ff0000;"></i> HEART RATE</p>
+        <p><span class="reading"><span id="heartRate"></span> bpm</span></p>
+      </div>
+      <!--SPO2-->
+      <div class="card">
+        <p><i class="fas fa-medkit" style="color:#2f61cf;"></i> SpO2</p>
+        <p><span class="reading"><span id="spo2"></span> &percnt;</span></p>
+      </div>
+    </div>
+  </div>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
