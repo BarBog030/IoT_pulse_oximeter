@@ -3,14 +3,14 @@
 #include "addons/RTDBHelper.h"
 
 #define WIFI_SSID "HUAWEI P20"
-#define WIFI_PASSWORD "71542100"
+#define WIFI_PASSWORD "xxxxxxxx"
 #define NETWORK_TIMEOUT_MS 10000
 
 #define API_KEY "AIzaSyCWZ-rPMcLbYvjAvQyEssgsNEWdQhEEwsA"
 #define DATABASE_URL "https://esp32-firebase-b114a-default-rtdb.europe-west1.firebasedatabase.app"
 
 #define USER_EMAIL "przykladowekonto@yahoo.com"
-#define USER_PASSWORD "PracaInzMax30102"
+#define USER_PASSWORD "xxxxxxxxxxxx"
 
 // Define Firebase Objects
 FirebaseData fbdo;
